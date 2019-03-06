@@ -9,18 +9,26 @@ def send_simple_message(email,name):
 		data={"from": "Mailgun Sandbox <postmaster@sandbox89f291fedc7243d38414d6871efcab53.mailgun.org>",
 			"to": email,
 			"subject": name,
-			"text": "Congratulations, you just sent an email with Mailgun!  You are truly awesome!"})
+			"text": "Congratulations, you just sent an email with Mailgun! You are truly awesome!"})
 
 
-app = Flask("comicsbridge")
+app = Flask("cosmicbridge")
 
 @app.route("/")
 def say_hello():
     return render_template("index.html")
 
+@app.route("/models")
+def model_page():
+	return render_template("models.html")
+
 @app.route("/about")
 def about_page():
 	return render_template("about.html")
+
+@app.route("/photographers")
+def photographers_page():
+	return render_template("photographers.html")
 
 @app.route("/contact")
 def contact_page():
